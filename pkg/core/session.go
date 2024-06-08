@@ -567,6 +567,7 @@ func (s *Session) ExecuteMethod(mc method.Call) (stream.List, error) {
 	}
 
 	reply, err := stream.Decode(resp)
+	fmt.Printf("Received reply: %v\n", reply)
 	if err != nil {
 		return nil, err
 	}
