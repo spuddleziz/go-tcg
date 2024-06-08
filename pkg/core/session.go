@@ -522,7 +522,7 @@ func (s *Session) Close() error {
 
 func (s *Session) ExecuteMethod(mc method.Call) (stream.List, error) {
 	if s.closed {
-		fmt.Printf("Session Closed Already for ExecMethod")
+		fmt.Printf("Session Closed Already for ExecMethod\n")
 		return nil, ErrSessionAlreadyClosed
 	}
 	b, err := mc.MarshalBinary()

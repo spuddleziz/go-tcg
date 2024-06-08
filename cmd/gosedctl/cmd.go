@@ -568,9 +568,9 @@ func (u *unlockEnterprise) Run(_ *context) error {
 		return fmt.Errorf("NewSession() to LockingSP failed: %v", err)
 	}
 
-	if err := lockingSession.Close(); err != nil {
-		return fmt.Errorf("failed to close session: %v", err)
-	}
+	// if err := lockingSession.Close(); err != nil {
+	// 	return fmt.Errorf("failed to close session: %v", err)
+	// }
 
 	if err := table.ThisSP_Authenticate(lockingSession, uid.LockingAuthorityBandMaster0, pwhash); err != nil {
 		return fmt.Errorf("authenticating as BandMaster0 failed: %v", err)
