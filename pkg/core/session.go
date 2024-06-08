@@ -455,6 +455,7 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 		return HostProperties{}, TPerProperties{}, ErrInvalidPropertiesResponse
 	}
 	params, ok := resp[3].(stream.List)
+	innerParams, ok2 := params[0].(stream.List)
 
 	// See "5.2.2.1.2 Properties Response".
 	// The returned response is in the same format as if the method was called.
@@ -465,9 +466,10 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 		len(params) != 5 {
 		// This is very serious, but can happen given that we might be using a shared ComID
 		fmt.Printf("Length Params: %d\n", len(params))
-		fmt.Printf("Params: %v\n", resp[3].(stream.List)[0])
+		fmt.Printf("Params: %v\n", innerParams)
 		fmt.Printf("Resp: %v\n", resp)
 		fmt.Printf("IS OK: %v\n", ok)
+		fmt.Printf("IS OK: %v\n", ok2)
 		return HostProperties{}, TPerProperties{}, ErrInvalidPropertiesResponse
 	}
 
