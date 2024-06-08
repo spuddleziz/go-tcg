@@ -457,6 +457,9 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 	params, ok := resp[3].(stream.List)
 	innerParams, ok2 := params[0].(stream.List)
 
+	hp := InitialHostProperties
+	tp := InitialTPerProperties
+
 	// See "5.2.2.1.2 Properties Response".
 	// The returned response is in the same format as if the method was called.
 	if !stream.EqualToken(resp[0], stream.Call) ||
@@ -470,11 +473,13 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 		fmt.Printf("Resp: %v\n", resp)
 		fmt.Printf("IS OK: %v\n", ok)
 		fmt.Printf("IS OK: %v\n", ok2)
+		if err := parseTPerProperties(innerParams, &tp); err != nil {
+			return HostProperties{}, TPerProperties{}, err
+		}
+		fmt.Printf("TPAR: %v\n", tp)
+
 		return HostProperties{}, TPerProperties{}, ErrInvalidPropertiesResponse
 	}
-
-	hp := InitialHostProperties
-	tp := InitialTPerProperties
 
 	// First parameter, required, TPer properties
 	tpParams, ok1 := params[0].(stream.List)
