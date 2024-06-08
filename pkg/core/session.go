@@ -476,13 +476,13 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 		if err := parseTPerProperties(innerParams, &tp); err != nil {
 			return HostProperties{}, TPerProperties{}, err
 		}
-		fmt.Printf("TPAR: %v\n", tp)
+		fmt.Printf("TPER: %v\n", tp)
 		if err := parseHostProperties(innerParams, &hp); err != nil {
 			return HostProperties{}, TPerProperties{}, err
 		}
-		fmt.Printf("TPAR: %v\n", hp)
+		fmt.Printf("HOSTPROP: %v\n", hp)
 
-		return HostProperties{}, TPerProperties{}, ErrInvalidPropertiesResponse
+		return hp, tp, nil
 	}
 
 	// First parameter, required, TPer properties
