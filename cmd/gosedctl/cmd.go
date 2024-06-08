@@ -561,6 +561,8 @@ func (u *unlockEnterprise) Run(_ *context) error {
 		return fmt.Errorf("failed to hash password: %v", err)
 	}
 
+	fmt.Printf("Password: %v\n", pwhash)
+
 	lockingSession, err := cs.NewSession(uid.EnterpriseLockingSP)
 	if err != nil {
 		return fmt.Errorf("NewSession() to LockingSP failed: %v", err)
