@@ -451,6 +451,7 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 	}
 
 	if len(resp) != 4 {
+		fmt.Printf("Output: %v\n", resp)
 		return HostProperties{}, TPerProperties{}, ErrInvalidPropertiesResponse
 	}
 	params, ok := resp[3].(stream.List)
