@@ -464,8 +464,9 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 		!ok ||
 		len(params) != 5 {
 		// This is very serious, but can happen given that we might be using a shared ComID
-		fmt.Printf("Params: %d\n", len(params))
-		fmt.Printf("Output: %v\n", params)
+		fmt.Printf("Length Params: %d\n", len(params))
+		fmt.Printf("Params: %v\n", params)
+		fmt.Printf("Resp: %v\n", params)
 		return HostProperties{}, TPerProperties{}, ErrInvalidPropertiesResponse
 	}
 
