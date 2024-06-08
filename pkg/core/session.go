@@ -467,6 +467,7 @@ func (cs *ControlSession) properties(rhp *HostProperties) (HostProperties, TPerP
 		fmt.Printf("Length Params: %d\n", len(params))
 		fmt.Printf("Params: %v\n", resp[3].(stream.List)[0])
 		fmt.Printf("Resp: %v\n", resp)
+		fmt.Printf("IS OK: %v\n", ok)
 		return HostProperties{}, TPerProperties{}, ErrInvalidPropertiesResponse
 	}
 
