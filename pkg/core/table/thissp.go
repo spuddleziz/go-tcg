@@ -53,6 +53,7 @@ func ThisSP_Authenticate(s *core.Session, authority uid.AuthorityObjectUID, proo
 	resp, err := s.ExecuteMethod(mc)
 	if err != nil {
 		fmt.Printf("RESP: %v\n", resp)
+		fmt.Printf("ERR: %v\n", err)
 		return err
 	}
 	res, ok := resp[0].(stream.List)
