@@ -560,8 +560,8 @@ func (u *unlockEnterprise) Run(_ *context) error {
 	if err != nil {
 		return fmt.Errorf("failed to hash password: %v", err)
 	}
-
-	fmt.Printf("Password: %v\n", pwhash)
+	pw := hex.EncodeToString(pwhash)
+	fmt.Printf("Password: %s\n", pw)
 
 	lockingSession, err := cs.NewSession(uid.EnterpriseLockingSP)
 	if err != nil {
