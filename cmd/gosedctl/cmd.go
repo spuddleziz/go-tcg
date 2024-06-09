@@ -92,48 +92,64 @@ func (t *PasswordEmbed) GenerateHash(coreObj *core.Core) ([]byte, error) {
 	case "hex":
 		data, err := hex.DecodeString(t.Password)
 		if err != nil {
-			fmt.Errorf("Cannot decode hex %v", err)
+			fmt.Printf("Cannot decode hex %v\n", err)
 			panic(err)
 		}
 		return data, nil
 	case "hex-dta":
 		data, err := hex.DecodeString(t.Password)
 		if err != nil {
-			fmt.Errorf("Cannot decode hex %v", err)
+			fmt.Printf("Cannot decode hex %v\n", err)
 			panic(err)
 		}
 		return hash.HashSedutilDTABytes(data, salt), nil
+	case "hex-sha256":
+		data, err := hex.DecodeString(t.Password)
+		if err != nil {
+			fmt.Printf("Cannot decode hex %v\n", err)
+			panic(err)
+		}
+		return hash.HashSedutil512Bytes(data, salt), nil
 	case "hex-sha512":
 		data, err := hex.DecodeString(t.Password)
 		if err != nil {
-			fmt.Errorf("Cannot decode hex %v", err)
+			fmt.Printf("Cannot decode hex %v\n", err)
 			panic(err)
 		}
 		return hash.HashSedutil512Bytes(data, salt), nil
 	case "file":
 		f, err := os.ReadFile(t.Password)
 		if err != nil {
-			fmt.Errorf("Cannot read file %v", err)
+			fmt.Printf("Cannot read file %v\n", err)
 			panic(err)
 		}
 		return f, nil
 	case "sedutil-dta-file":
 		f, err := os.ReadFile(t.Password)
 		if err != nil {
-			fmt.Errorf("Cannot read file %v", err)
+			fmt.Printf("Cannot read file %v\n", err)
 			panic(err)
 		}
 		return hash.HashSedutilDTABytes(f, salt), nil
+	case "sedutil-sha256-file":
+		f, err := os.ReadFile(t.Password)
+		if err != nil {
+			fmt.Printf("Cannot read file %v\n", err)
+			panic(err)
+		}
+		return hash.HashSedutil256Bytes(f, salt), nil
 	case "sedutil-sha512-file":
 		f, err := os.ReadFile(t.Password)
 		if err != nil {
-			fmt.Errorf("Cannot read file %v", err)
+			fmt.Printf("Cannot read file %v\n", err)
 			panic(err)
 		}
 		return hash.HashSedutil512Bytes(f, salt), nil
 	// Drive-Trust-Alliance uses sha1
 	case "sedutil-dta":
 		return hash.HashSedutilDTA(t.Password, salt), nil
+	case "sedutil-sha256":
+		return hash.HashSedutil256(t.Password, salt), nil
 	// ChubbyAnt uses sha512
 	case "sedutil-sha512":
 		return hash.HashSedutil512(t.Password, salt), nil
