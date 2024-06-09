@@ -1,0 +1,1133 @@
+/usr/lib/amd64/ld.so.1
+diskencrypt
+crt1.s
+crti.s
+values-Xa.c
+crtstuff.c
+__do_global_dtors_aux
+frame_dummy
+diskencrypt.c
+diskencrypt_get_status_usage
+diskencrypt_get_status_validate
+diskencrypt_do_get_status
+diskencrypt_create_keyfile_usage
+diskencrypt_create_keyfile_validate
+diskencrypt_do_create_keyfile
+diskencrypt_enable_usage
+diskencrypt_disk_validate
+diskencrypt_do_enable
+diskencrypt_disable_usage
+diskencrypt_do_disable
+diskencrypt_change_keys_usage
+diskencrypt_do_change_keys
+diskencrypt_secure_erase_usage
+diskencrypt_disks_validate
+diskencrypt_do_secure_erase
+diskencrypt_unlock_usage
+diskencrypt_do_unlock
+diskencrypt_tcg_reset_usage
+diskencrypt_do_tcg_reset
+diskencrypt_import_usage
+diskencrypt_import_validate
+diskencrypt_do_import
+diskencrypt_export_usage
+diskencrypt_do_export
+diskencrypt_get_passcode_status_usage
+diskencrypt_passcode_validate
+diskencrypt_do_get_passcode_status
+diskencrypt_enable_passcode_usage
+diskencrypt_do_enable_passcode
+diskencrypt_disable_passcode_usage
+diskencrypt_do_disable_passcode
+diskencrypt_change_passcode_usage
+diskencrypt_do_change_passcode
+diskencrypt_pool_enc_state_usage
+diskencrypt_pool_enc_state_validate
+diskencrypt_get_pool_enc_state
+diskencrypt_create_cachefile_usage
+diskencrypt_cachefile_validate
+diskencrypt_do_create_cachefile
+diskencrypt_refresh_cachefile_usage
+diskencrypt_do_refresh_cachefile
+print_error_message
+get_passwd
+print_usage
+diskencrypt_get_cmd
+__do_global_ctors_aux
+crtn.s
+__environ_lock
+libdiskencrypt_is_master_key_valid_all
+_Jv_RegisterClasses
+_exit
+___Argv
+__iob
+fprintf
+libdiskencrypt_disable_passcode
+__fpstart
+tcsetattr
+_edata
+libdiskencrypt_sanitize_disks_all
+_start
+tcgetattr
+libdiskencrypt_refresh_cachefile
+strcmp
+libdiskencrypt_get_supported_status
+__longdouble_used
+libdiskencrypt_change_passcode
+_mcount
+_GLOBAL_OFFSET_TABLE_
+libdiskencrypt_unlock_disks_all
+close
+cmds
+_init
+_end
+strerror
+sprintf
+libdiskencrypt_tcg_reset
+libdiskencrypt_create_cachefile
+write
+libdiskencrypt_enable_authorization
+_PROCEDURE_LINKAGE_TABLE_
+_DYNAMIC
+__deregister_frame_info_bases
+stat
+fileno
+open
+libdiskencrypt_enable_passcode
+strlen
+libdiskencrypt_create_keyfile
+_environ
+libdiskencrypt_sanitize_disks
+___errno
+libdiskencrypt_unlock_disk
+libdiskencrypt_disable_authorization
+libdiskencrypt_get_authorization_status
+libdiskencrypt_get_master_key
+libdiskencrypt_change_authorization_keys
+_etext
+snprintf
+atexit
+libdiskencrypt_update_master_key
+read
+__register_frame_info_bases
+scanf
+libdiskencrypt_get_pool_encryption_state
+_fini
+free
+_lib_version
+malloc
+libdiskencrypt_get_passcode_status
+main
+libdiskencrypt.so.1
+SUNW_1.1
+libc.so.1
+ILLUMOS_0.17
+SUNW_0.7
+SYSVABI_1.3
+%`tA
+%`tA
+_^ZY
+ATSu`H
+fff.
+fff.
+ffff.
+fff.
+fff.
+fff.
+4+L)
+})Hc
+The system generated authorization key does not match the drive's authorization key(Error : 0x%x).
+The disk drive has a stray TCG session. Clear the session using the command /zebi/bin/diskencrypt tcg-reset <disk_ctd_name>. The reset operation can be run when disk has active IO and is part of a pool(Error : 0x%x).
+Internal error detected. Please re-seat the drive and retry the command(Error : 0x%x).
+The drive has exclusive reservation set by another node. Please go to the peer node and retry the command(Error : 0x%x).
+The master keyfile is empty. Either encryption is not enabled or this system requires a keyfile import(Error : 0x%x).
+/etc/diskencryption/status_file
+Failed to update the cachefile %s (Error : 0x%x).
+An unknown error (0x%x) has has been detected.
+diskencrypt get-status [--supports-encryption] <disk_ctd_name>
+diskencrypt enable <disk_ctd_name>
+diskencrypt disable <disk_ctd_name>
+diskencrypt secure-erase <disk_ctd_name> | --all
+diskencrypt unlock [--override] <disk_ctd_name> | --all
+diskencrypt tcg-reset <disk_ctd_name>
+diskencrypt import-keyfile [--override] <fullpath_file>
+diskencrypt export-keyfile [filename]
+diskencrypt get-passcode-status
+diskencrypt disable-passcode [--override]
+diskencrypt get-pool-state <pool-name> [pool-cachefile]
+diskencrypt refresh-cachefile
+Getting authorization status for disk failed.
+Authorization is NOT Supported
+Drive is currently locked. Unlock the drive to use it.
+Drive is currently NOT locked.
+Successfully created the master keyfile.
+Master keyfile already exists.
+Success: Authorization enabled.
+Failed to enable Authorization.
+Success: Authorization disabled.
+Failed to disable Authorization.
+Passcode is enabled on the system.
+Please use change-passcode option to change the authorization keys.
+Success: Changed Authorization keys of all disks.
+Failed to sanitize disk. Disk is not a SED.
+Success: Sanitization complete.
+Failed to sanitize disk(s). Verify that the disk(s) is/are not part of an active pool.
+Failed to unlock all the disk drives.
+Failed to unlock the drive. Cannot determine if the drive is locked.
+Failed to unlock the disk drive.
+Success: Unlocking of disk(s) is complete.
+Success: TCG session has been reset.
+Failed to reset the TCG session for disk drive.
+Error: Failed to find the input file %s or the file is empty.
+ERROR: Failed to allocate %d bytes of memory.
+ERROR: Failed to open the input file %s.
+ERROR: Failed to read the input file %s.
+If you have enabled encryption passcode
+in this system, please enter the passcode
+ERROR: Import failed. The input keyfile is invalid and does not match the node's disk keys
+Failed to update the keyfile.
+Success: Updated the key file. Reboot to unlock the drives.
+Failed to get the keyfile contents.
+ERROR: Cannot create keyfile %s for export.
+ERROR: Cannot write to the keyfile %s.
+Success: keyfile %s is ready for export.
+Passcode is %s on this system.
+Passcode is already enabled on this system.
+Passcodes do not match. Please retry the operation.
+Success: Passcode has been enabled on the system.
+Failed to enable passcode on the system.
+Passcode is already disabled on this system.
+Success: Passcode has been disabled on the system.
+Failed to disable passcode on the system.
+Passcode is disabled on this system. Please enable passcode and then proceed with the operation.
+Please re-enter the new passcode
+Success: Passcode has been changed on the system.
+Failed to change passcode on the system.
+The pool '%s' is in '%s' state
+Failed to create the cachefile which contains all the drives's authorization status.
+Success: Created a cachefile %s which contains the authorization status for all the drives.
+Failed to refresh the cachefile which contains all the drives's authorization status.
+Success: Refreshed the cachefile %s which contains the authorization status for all the drives.
+diskencrypt get-status c2t5000CCA04F074030d0
+diskencrypt enable c2t5000CCA04E087B78d0
+diskencrypt import-keyfile /home/user/keyfile.bin
+diskencrypt tcg-reset c2t5000CCA01313B6A8d0
+Invalid password buffer length. It
+should be at least %d bytes
+Error initializing the password module.
+Passcode length should neither be 0 nor exceed %d.
+Command '%s %s' failed. Input validation returned error.
+diskencrypt create-keyfile
+diskencrypt change-keys
+diskencrypt enable-passcode
+diskencrypt change-passcode
+diskencrypt create-cachefile
+/dev/rdsk/%ss0
+--supports-encryption
+--override
+--all
+Authorization is Enabled
+Authorization is Supported
+Authorization is NOT Enabled
+Failed to change keys.
+Please enter the passcode
+Reason = %s
+/root/keyfile_for_export
+disabled
+enabled
+Please re-enter the passcode
+Please enter the old passcode
+Please enter the new passcode
+indeterminable
+Usage:
+%s: 
+%%%ds
+Invalid input
+Usage: 
+--help
+unknown
+unlocked
+partially locked
+get-status
+create-keyfile
+enable
+disable
+change-keys
+secure-erase
+unlock
+tcg-reset
+import-keyfile
+export-keyfile
+get-passcode-status
+enable-passcode
+disable-passcode
+change-passcode
+get-pool-state
+create-cachefile
+refresh-cachefile
+diskencrypt
+crt1.s
+crti.s
+values-Xa.c
+crtstuff.c
+__CTOR_LIST__
+__DTOR_LIST__
+__EH_FRAME_BEGIN__
+__JCR_LIST__
+__do_global_dtors_aux
+completed.5023
+dtor_idx.5025
+frame_dummy
+object.5049
+diskencrypt.c
+diskencrypt_get_status_usage
+diskencrypt_get_status_validate
+diskencrypt_do_get_status
+diskencrypt_create_keyfile_usage
+diskencrypt_create_keyfile_validate
+diskencrypt_do_create_keyfile
+diskencrypt_enable_usage
+diskencrypt_disk_validate
+diskencrypt_do_enable
+diskencrypt_disable_usage
+diskencrypt_do_disable
+diskencrypt_change_keys_usage
+diskencrypt_do_change_keys
+diskencrypt_secure_erase_usage
+diskencrypt_disks_validate
+diskencrypt_do_secure_erase
+diskencrypt_unlock_usage
+diskencrypt_do_unlock
+diskencrypt_tcg_reset_usage
+diskencrypt_do_tcg_reset
+diskencrypt_import_usage
+diskencrypt_import_validate
+diskencrypt_do_import
+diskencrypt_export_usage
+diskencrypt_do_export
+diskencrypt_get_passcode_status_usage
+diskencrypt_passcode_validate
+diskencrypt_do_get_passcode_status
+diskencrypt_enable_passcode_usage
+diskencrypt_do_enable_passcode
+diskencrypt_disable_passcode_usage
+diskencrypt_do_disable_passcode
+diskencrypt_change_passcode_usage
+diskencrypt_do_change_passcode
+diskencrypt_pool_enc_state_usage
+diskencrypt_pool_enc_state_validate
+diskencrypt_get_pool_enc_state
+diskencrypt_create_cachefile_usage
+diskencrypt_cachefile_validate
+diskencrypt_do_create_cachefile
+diskencrypt_refresh_cachefile_usage
+diskencrypt_do_refresh_cachefile
+print_error_message
+get_passwd
+CSWTCH.55
+print_usage
+diskencrypt_get_cmd
+__CTOR_END__
+__FRAME_END__
+__JCR_END__
+__do_global_ctors_aux
+crtn.s
+_END_
+__DTOR_END__
+__dso_handle
+_START_
+__environ_lock
+libdiskencrypt_is_master_key_valid_all
+_Jv_RegisterClasses
+_exit
+___Argv
+__iob
+fprintf
+libdiskencrypt_disable_passcode
+__fpstart
+tcsetattr
+_edata
+libdiskencrypt_sanitize_disks_all
+_start
+tcgetattr
+libdiskencrypt_refresh_cachefile
+strcmp
+libdiskencrypt_get_supported_status
+__longdouble_used
+libdiskencrypt_change_passcode
+_mcount
+_GLOBAL_OFFSET_TABLE_
+libdiskencrypt_unlock_disks_all
+close
+cmds
+_init
+_end
+strerror
+sprintf
+libdiskencrypt_tcg_reset
+libdiskencrypt_create_cachefile
+write
+libdiskencrypt_enable_authorization
+_PROCEDURE_LINKAGE_TABLE_
+_DYNAMIC
+__deregister_frame_info_bases
+stat
+fileno
+open
+libdiskencrypt_enable_passcode
+strlen
+libdiskencrypt_create_keyfile
+_environ
+libdiskencrypt_sanitize_disks
+___errno
+libdiskencrypt_unlock_disk
+libdiskencrypt_disable_authorization
+libdiskencrypt_get_authorization_status
+libdiskencrypt_get_master_key
+libdiskencrypt_change_authorization_keys
+_etext
+snprintf
+atexit
+libdiskencrypt_update_master_key
+read
+__register_frame_info_bases
+scanf
+libdiskencrypt_get_pool_encryption_state
+_fini
+free
+_lib_version
+malloc
+libdiskencrypt_get_passcode_status
+main
+@(#)SunOS 5.11 3.11.0.3-23539 2021.03.31
+.interp
+.eh_frame_hdr
+.eh_frame
+.SUNW_syminfo
+.hash
+.SUNW_ldynsym
+.dynsym
+.dynstr
+.SUNW_version
+.SUNW_versym
+.SUNW_dynsymsort
+.SUNW_reloc
+.rela.plt
+.text
+.init
+.fini
+.rodata
+.got
+.dynamic
+.data
+.ctors
+.dtors
+.jcr
+.bss
+.symtab
+.strtab
+.comment
+.SUNW_ctf
+.shstrtab
+.SUNW_ctf
+.SUNW_ctf
+?hTA
+Zh#(
+aMjn
+8[kG
+ov}'
+h 4*
+T*sE
+5VyB)
+jWR!
+uY|q
+@ygd
+]3-n
+VuCk
+ * Copyright 2014 Tegile Systems, Inc. All rights reserved.
+ * Use is subject to license terms.
+#ifndef	_libdiskENCRYPT_H
+#define	_libdiskENCRYPT_H
+#include <sys/types.h>
+#include <sys/isa_defs.h>
+ * This library can run only on little endian processors.
+ * Return error if this is being compiled for any other
+ * format. All of Tegile's system use little endian processors.
+ * Support for Big endian will be added only when necessary.
+#if !defined(_LITTLE_ENDIAN)
+#error "libdiskencrypt library cannot be run on non little endian machines"
+#endif
+#define	LIBDISKENCRYPT_MAX_DISKS 500
+#define LIBDISKENCRYPT_MAX_PASSCODE_LEN 256
+typedef enum pool_encryption_state_s {
+	PES_UNKNOWN=0,
+	PES_LOCKED,
+	PES_PARTIALLY_LOCKED,
+	PES_UNLOCKED
+} pool_encryption_state_t;
+typedef struct pool_enc_status_s {
+	int pes_firstdisk_state;
+	pool_encryption_state_t pes_pool_status;
+} pool_enc_status_t;
+typedef void (*diskencrypt_op_failed)(char *ctd_diskname, int error);
+int libdiskencrypt_is_authorization_module_initialized(void);
+int libdiskencrypt_get_supported_status(char *disk_ctd_name,
+					boolean_t *is_authorization_supported);
+int libdiskencrypt_get_authorization_status(char *disk_ctd_name,
+					boolean_t *is_authorization_supported,
+					boolean_t *is_authorization_enabled,
+					boolean_t *is_locked);
+int libdiskencrypt_enable_authorization(char **disk_ctd_names, int ndisks,
+					diskencrypt_op_failed func);
+int libdiskencrypt_disable_authorization(char **disk_ctd_names, int ndisks,
+					diskencrypt_op_failed func);
+int libdiskencrypt_change_authorization_keys(void);
+int libdiskencrypt_sanitize_disks(char **disk_ctd_names, int ndisks,
+					diskencrypt_op_failed func);
+int libdiskencrypt_sanitize_disks_all(void);
+int libdiskencrypt_update_master_key(char *byte_stream,
+		int32_t byte_stream_size, char *passcode,
+		int32_t passcode_len,
+		boolean_t override_passcode_verification);
+int libdiskencrypt_get_master_key(char *passcode, int32_t passcode_len,
+		char **byte_stream, int32_t *byte_strem_size);
+int libdiskencrypt_unlock_disk(char *disk_ctd_name, char *passcode,
+		int32_t passcode_len);
+int libdiskencrypt_tcg_reset(char *disk_ctd_name);
+boolean_t libdiskencrypt_is_master_key_valid(char **disk_ctd_names, int ndisks,
+		char *byte_stream, int32_t byte_stream_size,
+		char *passcode, int32_t passcode_len,
+		boolean_t override_passcode_verification);
+boolean_t libdiskencrypt_is_master_key_valid_all(char *byte_stream,
+		int32_t byte_stream_size, char *passcode, int32_t passcode_len,
+		boolean_t override_passcode_verification);
+boolean_t libdiskencrypt_is_key_import_required(void);
+int libdiskencrypt_create_keyfile(void);
+boolean_t libdiskencrypt_get_passcode_status(void);
+int libdiskencrypt_enable_passcode(char *passcode, int32_t passcode_len);
+int libdiskencrypt_disable_passcode(char *passcode, int32_t passcode_len,
+		boolean_t override_passcode_verification);
+int libdiskencrypt_change_passcode(char *cur_passcode, int32_t cur_passcode_len,
+		char *new_passcode, int32_t new_passcode_len);
+pool_encryption_state_t libdiskencrypt_get_pool_encryption_state(char *poolname,
+		char *pool_cachefile);
+int libdiskencrypt_unlock_disks_all(char *passcode, int32_t passcode_len);
+int libdiskencrypt_cachefile_exists(void);
+int libdiskencrypt_create_cachefile(void);
+int libdiskencrypt_refresh_cachefile(void);
+#endif	/* _LIBDISKENCRYPT_H */
+libdiskencrypt.so.1
+crti.s
+values-Xa.c
+crtstuff.c
+__do_global_dtors_aux
+frame_dummy
+disk_encrypt.c
+disk_ctdnames_to_wwn
+libdiskencrypt_do_enable_auth
+libdiskencrypt_do_disable_authorization
+disk_encrypt_disable_auth
+tcg_change_keys
+tcg_is_active_pool_disk
+libdiskencrypt_do_sanitize_disks
+tcg_secure_erase
+libdiskencrypt_unlock_disk
+diskencrypt_do_unlock_disk
+tcg_check_import_key_validity
+tcg_do_check_import_key_validity
+check_if_import_required
+get_encryption_status
+zpool_config_iter
+diskencrypt_do_create_cachefile
+cache_disk_enc_status
+tcg_do_secure_erase
+is_ssd
+scsi_format_unit
+zpool_iterator
+diskname_vdev_match
+zpool_vdev_iterator
+wait_for_format_completion
+tcg_commands.c
+tcg_get_authorization_status_with_retries
+tcg_do_get_msid
+tcg_do_change_key
+tcg_execute_cmd
+tcg_change_auth_key
+tcg_validate_key
+tcg_do_authenticate
+tcg_do_get_wwns
+is_ctd_disk_name
+is_disk_present
+tcg_do_get_authorization_status
+tcg_get_authorization_status_from_cachefile
+tcg_check_auth_status
+tcg_send_uscsi_cmd
+tcg_commands_common.c
+decipher_tcg_open_session_resp
+decipher_tcg_get_msid_resp
+decipher_tcg_close_session_resp
+decipher_tcg_authentication_resp
+decipher_tcg_get_lock_setting_resp
+decipher_tcg_set_method_resp
+decipher_tcg_set_locking_status_resp
+decipher_tcg_erase_disk_resp
+decipher_tcg_write_datastore_resp
+decipher_tcg_read_datastore_resp
+decipher_tcg_get_random_number_resp
+decipher_tcg_reset_session_resp
+convert_uint8_array_to_uint64
+tcg_get_master_key
+tcg_get_secondary_master_key
+tcg_get_key
+tcg_get_passcode_status
+tcg_update_key_file
+tcg_get_random_key
+read_key
+tcg_simple_obfuscation
+check_and_get_data_len
+convert_uint8_array_to_uint32
+get_com_packet_len
+get_packet_len
+get_data_subpacket_len
+__do_global_ctors_aux
+crtn.s
+tcg_enable_auth
+decipher_tcg_response
+tcg_authenticate
+scsi_tcg_response_cmd_fini
+scsi_tcg_response_cmd_init
+libzfs_fini
+libzfs_init
+tcg_decipher_keyfile
+tcg_authenticate_payload_init
+decipher_tcg_discovery_response
+create_tcg_discovery_cmd
+tcg_read_datastore_payload_init
+scsi_tcg_in_cmd_init
+tcg_get_MSID_payload_init
+tcg_reset_disk
+tcg_unlock_disk
+tcg_named_disk_iterator
+tcg_reset_session_payload_init
+tcg_unlock_disk_payload_init
+tcg_get_locked_status
+tcg_disable_auth
+tcg_change_auth_keys
+tcg_get_random_number_payload_init
+tcg_do_get_passcode_status
+tcg_create_master_keyfile
+tcg_get_random_key_from_disk
+tcg_get_supported_status
+tcg_update_passcode
+tcg_sanitize_disk
+tcg_erase_disk_payload_init
+tcg_get_passcode_key
+tcg_init_disk
+tcg_cachefile_empty
+tcg_set_key_payload_init
+tcg_write_datastore_payload_init
+tcg_set_locking_status_payload_init
+tcg_is_scsi_sense_error
+tcg_get_msid
+tcg_get_wwns
+tcg_open_session_payload_init
+tcg_close_session_payload_init
+tcg_keyfile_empty
+tcg_change_key
+tcg_get_lock_setting_payload_init
+create_inquiry_cmd
+tcg_get_wwn
+tcg_update_sense_info
+tcg_write_keyfile
+tcg_validate_passcode
+tcg_get_authorization_status
+tcg_get_status
+_edata
+nvlist_add_string
+nvlist_lookup_nvlist_array
+libdiskencrypt_get_authorization_status
+dm_get_associated_descriptors
+zebi_sys_monitor_ereport_post
+_end
+libdiskencrypt_is_master_key_valid
+libdiskencrypt_update_master_key
+gethrtime
+zpool_get_config
+_GLOBAL_OFFSET_TABLE_
+nvlist_lookup_boolean_value
+sleep
+nvpair_value_boolean_value
+libdiskencrypt_disable_authorization
+zebi_sys_monitor_ereport_create
+libdiskencrypt_enable_passcode
+strrchr
+malloc
+libdiskencrypt_tcg_reset
+nvlist_next_nvpair
+libdiskencrypt_change_passcode
+nvlist_free
+strlen
+stat
+nvlist_unpack
+__register_frame_info_bases
+getpagesize
+strcpy
+libdiskencrypt_is_authorization_module_initialized
+libdiskencrypt_disable_passcode
+rename
+dm_get_descriptors
+libdiskencrypt_refresh_cachefile
+write
+ioctl
+libdiskencrypt_get_supported_status
+libdiskencrypt_change_authorization_keys
+libdiskencrypt_sanitize_disks
+strstr
+nvlist_alloc
+dm_get_name
+zpool_iter
+pthread_mutex_lock
+libdiskencrypt_get_master_key
+zpool_open
+nvlist_lookup_uint64_array
+_Jv_RegisterClasses
+nvlist_lookup_byte_array
+libdiskencrypt_enable_authorization
+sscanf
+read
+pkcs11_get_random
+nvlist_add_int32
+memset
+nvpair_value_nvlist
+nvlist_add_uint64
+_PROCEDURE_LINKAGE_TABLE_
+nvlist_add_boolean_value
+libdiskencrypt_get_pool_encryption_state
+nvpair_name
+_DYNAMIC
+SHA2Init
+libdiskencrypt_is_master_key_valid_all
+nvpair_value_int32
+libdiskencrypt_cachefile_exists
+libdiskencrypt_unlock_disks_all
+zpool_close
+___errno
+nvlist_add_nvlist
+strcmp
+libdiskencrypt_get_passcode_status
+posix_memalign
+libdiskencrypt_create_cachefile
+nvlist_lookup_string
+libdiskencrypt_is_key_import_required
+dm_free_descriptors
+nvlist_add_byte_array
+snprintf
+nvlist_lookup_nvlist
+pthread_mutex_unlock
+_etext
+__deregister_frame_info_bases
+memcpy
+nvlist_lookup_uint64
+dm_free_name
+SHA2Final
+SHA2Update
+nvpair_type
+libdiskencrypt_create_keyfile
+libdiskencrypt_sanitize_disks_all
+SUNW_1.1
+nvlist_pack
+libc.so.1
+ILLUMOS_0.17
+SUNW_1.23
+SUNW_0.9
+SUNW_0.7
+libmd.so.1
+libdiskmgt.so.1
+SUNWprivate_1.1
+libcryptoutil.so.1
+SUNWprivate
+libnvpair.so.1
+SUNW_1.2
+SUNW_1.1.1
+libsysevent.so.1
+libzfs.so.1
+ATSu`H
+ffffff.
+fff.
+t6|!A
+fffff.
+ffff.
+T$PE
+L$@E
+T$PI
+t$HL
+T$@M
+D$ L
+~gE1
+t$ H
+fff.
+fff.
+fff.
+fffff.
+ffffff.
+ffff.
+fffff.
+ffff.
+ffff.
+ffff.
+fffff.
+ffff.
+ffff.
+ffff.
+fff.
+ffff.
+ffff.
+|$ L
+|$ L
+?uEE
+kwwn
+pen_
+kwwn
+%xera
+(_ate
+kwwn
+pen_
+kwwn
+6\Vr
+kwwn
+kwwn
+kwwn
+Wecdaeo
+$)pe
+$)pe
+le_o
+kwwn
+~nd_
+rM_o
+kwwn
+rM_o
+$)pe
+kwwn
+~nd_
+rM_o
+$)pe
+FRthp
+pons
+TCG_LOCKING_SP_SESSION_ID
+pons
+pons
+init
+TCGPAYLOAD_SET_DATAS
+T3E_PARTIALBODY
+libzfs
+libzfs
+init
+TCG_LEVEL0_DISCOVERY_SCSI_CDB
+SCSI_SECURITY_IN_CDB_TCG_RESET
+TCGPAYLOAD_DATA_SUBPACKET_LEN
+TCG_LOCKING_SP_UID
+SCSI_SECURITY_IN_CDB
+TCG_SHORT_ATOM_TOKEN
+TCG_GLOBAL_RANGE_UID
+TCGPAYLOAD_MODIFY_GLOBALRANGE_LOCK_BODY
+_dso_h
+TCG_ERASEMAS
+ER_OBJECT_UID
+eyload_init
+pons
+eate_
+read_dataspe
+eyload_init
+init
+_START_
+TCGPAYLOAD_COM_PACKET_LEN
+rMSID
+eyload_init
+reset_di
+unlock_di
+named_di
+k_iterape
+SCSI_INQUIRY_DEV_ID_PAGE
+TCGPAYLOAD_PACKET_LEN
+reset_sess
+eyload_init
+unlock_di
+eyload_init
+rlocked_status
+TCGPAYLOAD_RESET_SESSION_BODY
+TCGPAYLOAD_ERASE_DISK_BODY
+FRthpSCSI_SECURITY_OUT_CDB_MULTIPLE4
+TCG_SID
+FRth_
+om_number
+eyload_init
+TCG_ADMIN_SP_UID
+TCGPAYLOAD_GET_LOCK_SETTING_BODY
+rpas
+de_status
+tcg_create_master_
+tcg_
+_from_di
+rsupported_status
+tcg_update_pas
+TCGPAYLOAD_GETMSID
+BODY
+TCG_BANDMAS
+ER_UID
+TCG_ERASEMAS
+ER0_OBJECT_UID
+SCSI_SECURITY_OUT_CDB
+tcg_sanitize_di
+TCG_ERASEMAS
+ER0_UID
+tcg_erase_di
+eyload_init
+tcg_
+rpas
+tcg_init_di
+tcg_cache
+_empty
+TCG_ADMIN_SP_SESSION_ID
+_lib_
+tcg_set_
+_payload_init
+TCGPAYLOAD_GET_RANDOM_NUMBER_BODY
+write_dataspe
+eyload_init
+tcg_set_locking_status
+eyload_init
+tcg_is_
+sense_error
+tcg_
+rmsid
+tcg_
+rwwn
+open_sess
+eyload_init
+SCSI_SECURITY_OUT_CDB_TCG_RESET
+TCGPAYLOAD_SET_DATASTORE_TRAILER_DATA
+tcg_close_sess
+eyload_init
+TCG_BANDMAS
+ER0_OBJECT_UID
+TCG_BANDMAS
+ER1_OBJECT_UID
+TCGPAYLOAD_AUTH_BODY
+_empty
+TCGPAYLOAD_DATA_TAIL
+tcg_ch
+SCSI_SECURITY_IN_CDB_MULTIPLE4
+TCGPAYLOAD_SET_METHOD_BODY
+rlock_setting_payload_init
+create_inquiry_cmd
+TCGPAYLOAD_DATA_HEADER
+g_libdi
+kencrypt_mutex
+tcg_
+rwwn
+tcg_update_sense_info
+tcg_write_
+TCGPAYLOAD_EXTENDED_COMID
+TCGPAYLOAD_READ_DATASTORE_BODY
+tcg_validate_pas
+tcg_
+rauthorization_status
+tcg_
+rstatus
+_edata
+nvlist_add_string
+nvlist_lookup_nvlist_array
+libdi
+kencrypt_
+rauthorization_status
+rassociated_descriptors
+zebi_sys_monitor_ereport_post
+_end
+libdi
+kencrypt_is_master_
+_valid
+libdi
+kencrypt_update_master_
+hrtime
+zpool_
+rconfig
+_GLOBAL_OFFSET_TABLE_
+nvlist_lookup_boolean_value
+sleep
+nvpair_value_boolean_value
+libdi
+kencrypt_di
+able_authorization
+zebi_sys_monitor_ereport_create
+libdi
+kencrypt_enable_passcode
+strrchr
+malloc
+libdi
+kencrypt_tcg_reset
+nvlist_next_nvpair
+libdi
+kencrypt_ch
+passcode
+nvlist_free
+strlen
+stat
+nvlist_unpack
+__register_frame_info_bases
+pagesize
+strcpy
+libdi
+kencrypt_is_authorization_module_initialized
+libdi
+kencrypt_di
+able_passcode
+rename
+rdescriptors
+libdi
+kencrypt_refresh_cache
+write
+ioctl
+libdi
+kencrypt_
+_supported_status
+libdi
+kencrypt_ch
+authorization_
+libdi
+kencrypt_sanitize_di
+strstr
+nvlist_alloc
+rname
+zpool_iter
+pthread_mutex_lock
+libdi
+kencrypt_
+_master_
+zpool_open
+nvlist_lookup_uint64_array
+_Jv_RegisterClasses
+nvlist_loorization
+sscanf
+read
+pkcs11_get_random
+nvlist_add_int32
+memset
+nvpair_value_nvlist
+nvlist_add_uint64
+_PROCEDURE_LINKAGE_TABLE_
+nvlist_add_boolean_value
+libdiskencrypt_get_pool_encryption_state
+nvpair_name
+_DYNAMIC
+SHA2Init
+libdiskencrypt_is_master_key_valid_all
+nvpair_value_int32
+libdiskencrypt_cachefile_exists
+libdiskencrypt_unlock_disks_all
+zpool_close
+___errno
+nvlist_add_nvlist
+strcmp
+libdiskencrypt_get_passcode_status
+posix_memalign
+libdiskencrypt_create_cachefile
+nvlist_lookup_string
+libdiskencrypt_is_key_import_required
+dm_free_descriptors
+nvlist_add_byte_array
+snprintf
+nvlist_lookup_nvlist
+pthread_mutex_unlock
+_etext
+__deregister_frame_info_bases
+memcpy
+nvlist_lookup_uint64
+dm_free_name
+SHA2Final
+SHA2Update
+nvpair_type
+libdiskencrypt_create_keyfile
+libdiskencrypt_sanitize_disks_all
+SUNW_1.1
+nvlist_pack
+@(#)SunOS 5.11 3.11.0.3-23539 2021.03.31
+.dynamic
+.eh_frame_hdr
+.eh_frame
+.SUNW_syminfo
+.hash
+.SUNW_ldynsym
+.dynsym
+.dynstr
+.SUNW_version
+.SUNW_versym
+.SUNW_dynsymsort
+.SUNW_reloc
+.rela.plt
+.text
+.init
+.fini
+.rodata
+.got
+.data
+.ctors
+.dtors
+.jcr
+.bss
+.symtab
+.strtab
+.comment
+.SUNW_ctf
+.shstrtab
+.SUNW_ctf
+^<=(
+vFfh8
+4>c<b
+2>e<l<f
+8[M?
+BqOk")
+oLP+
+6=8Z
+XU9oG
+kw:};
+p-jf
+M:*$
+~zGWe
+!rG(O
+y`(7
+\#rMY
+?si]
+pA;C
+T\XU[
+2G7~
+y&q`*
+:fYa
+?9#e[;
+q}/d
+[Gp6s*
+{e~l
+m#~R]
+YDogh"
+P^%o
+n-P	
+6Q]'
+KaUs
+be5u
+po*Q
+.0&~
+k+`]
+@IzQ@T
+OBHYI
+0ma@J
+1T ;h@
+ 9(@f
+%WhX
+C0"=H
+J+%1!g
+IP~RV
+BrPM
+4QSC
+p~jEg(
+ktc /
+XG?_
+[r?M,
