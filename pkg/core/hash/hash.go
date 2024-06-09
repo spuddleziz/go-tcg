@@ -18,6 +18,12 @@ func HashSedutilDTA(password string, serial string) []byte {
 	return pbkdf2.Key([]byte(password), []byte(salt[:20]), 75000, 32, sha1.New)
 }
 
+func HashSedutil256(password string, serial string) []byte {
+	// This needs to match https://github.com/ChubbyAnt/sedutil/
+	salt := fmt.Sprintf("%-20s", serial)
+	return pbkdf2.Key([]byte(password), []byte(salt[:20]), 500000, 32, sha256.New)
+}
+
 func HashSedutil512(password string, serial string) []byte {
 	// This needs to match https://github.com/ChubbyAnt/sedutil/
 	salt := fmt.Sprintf("%-20s", serial)
@@ -28,6 +34,12 @@ func HashSedutilDTABytes(password []byte, serial string) []byte {
 	// This needs to match https://github.com/Drive-Trust-Alliance/sedutil/
 	salt := fmt.Sprintf("%-20s", serial)
 	return pbkdf2.Key(password, []byte(salt[:20]), 75000, 32, sha1.New)
+}
+
+func HashSedutil256Bytes(password []byte, serial string) []byte {
+	// This needs to match https://github.com/ChubbyAnt/sedutil/
+	salt := fmt.Sprintf("%-20s", serial)
+	return pbkdf2.Key(password, []byte(salt[:20]), 500000, 32, sha256.New)
 }
 
 func HashSedutil512Bytes(password []byte, serial string) []byte {

@@ -95,6 +95,13 @@ func main() {
 				ctx.FatalIfErrorf(err)
 			}
 			pin = hash.HashSedutilDTABytes(data, sn)
+		case "hex-sha256":
+			data, err := hex.DecodeString(cli.Password)
+			if err != nil {
+				log.Fatalf("Cannot decode hex %v", err)
+				ctx.FatalIfErrorf(err)
+			}
+			pin = hash.HashSedutil256Bytes(data, sn)
 		case "hex-sha512":
 			data, err := hex.DecodeString(cli.Password)
 			if err != nil {
@@ -116,6 +123,13 @@ func main() {
 				ctx.FatalIfErrorf(err)
 			}
 			pin = hash.HashSedutilDTABytes(f, sn)
+		case "sedutil-sha256-file":
+			f, err := os.ReadFile(cli.Password)
+			if err != nil {
+				log.Fatalf("Cannot read file %v", err)
+				ctx.FatalIfErrorf(err)
+			}
+			pin = hash.HashSedutil256Bytes(f, sn)
 		case "sedutil-sha512-file":
 			f, err := os.ReadFile(cli.Password)
 			if err != nil {
@@ -125,6 +139,8 @@ func main() {
 			pin = hash.HashSedutil512Bytes(f, sn)
 		case "sedutil-dta":
 			pin = hash.HashSedutilDTA(cli.Password, sn)
+		case "sedutil-sha256":
+			pin = hash.HashSedutil512(cli.Password, sn)
 		case "sedutil-sha512":
 			pin = hash.HashSedutil512(cli.Password, sn)
 		default:

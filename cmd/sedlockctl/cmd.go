@@ -37,7 +37,7 @@ var cli struct {
 	Sidhash    string       `optional:""`
 	User       string       `optional:"" short:"u"`
 	Password   string       `required:"" short:"p" type:"password" help:"SID Password"`
-	Hash       string       `optional:"" short:"h" default:"sedutil-dta" enum:"sedutil-dta,sedutil-sha512,hex,hex-dta,hex-sha512,hex-file,file,sedutil-dta-file,sedutil-sha512-file" help:"Either use sedutil-dta (sha1) or sedutil-sha512 for hashing"`
+	Hash       string       `optional:"" short:"h" default:"sedutil-dta" enum:"sedutil-dta,sedutil-sha256,sedutil-sha512,hex,hex-dta,hex-sha256,hex-sha512,hex-file,file,sedutil-dta-file,sedutil-sha256-file,sedutil-sha512-file" help:"Either use sedutil-dta (sha1) or sedutil-sha512 for hashing"`
 	List       listCmd      `cmd:"" help:"List all ranges (default)"`
 	LockAll    lockAllCmd   `cmd:"" help:"Locks all ranges completely"`
 	UnlockAll  unlockAllCmd `cmd:"" help:"Unlocks all ranges completely"`

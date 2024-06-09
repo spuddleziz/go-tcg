@@ -21,7 +21,7 @@ type DeviceEmbed struct {
 
 type PasswordEmbed struct {
 	Password string `required:"" env:"PWD" help:"SID Password" type:"password"`
-	Hash     string `optional:"" env:"HASH" default:"sedutil-dta" enum:"sedutil-dta,sedutil-sha512,hex,hex-dta,hex-sha512,hex-file,file,sedutil-dta-file,sedutil-sha512-file" help:"Either use sedutil-dta (sha1) or sedutil-sha512 for hashing"`
+	Hash     string `optional:"" env:"HASH" default:"sedutil-dta" enum:"sedutil-dta,sedutil-sha256,sedutil-sha512,hex,hex-dta,hex-sha256,hex-sha512,hex-file,file,sedutil-dta-file,sedutil-sha256-file,sedutil-sha512-file" help:"Either use sedutil-dta (sha1) or sedutil-sha512 for hashing"`
 }
 
 // initialSetupCmd is the struct for the initial-setup cmd required by kong command line parser
