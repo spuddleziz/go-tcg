@@ -1,2 +1,5 @@
 **/.*.sw?
 target/
+core
+diskenc
+pg_data
